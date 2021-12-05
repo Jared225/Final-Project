@@ -1,0 +1,316 @@
+<!Doctype html>
+
+<head>
+
+    <link rel="stylesheet" href="css/backGround.css">
+
+</head>
+
+<body>
+
+    <div class="center">
+
+        <div class="center-button">
+
+            <p><button id="drawCard" type="button">Draw</button>
+
+                <button id="restart" type="button">Reset</button>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="game">
+
+        <img id="cardimage" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage2" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage3" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage4" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage5" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage6" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage7" src="img2/backCard.png" width="125px" height="200px">
+
+        <img id="cardimage8" src="img2/backCard.png" width="125px" height="200px">
+
+        <h3>Your card value: <strong id="score">0</strong></h3>
+
+        <h3>Your score: <strong id="total">0</strong></h3>
+
+
+        <script type="text/javascript">
+
+            let card = ['img2/card1.png', 'img2/card2.png', 'img2/card3.png', 'img2/card4.png', 'img2/card5.png', 'img2/card6.png', 'img2/card7.png', 'img2/card8.png'];
+
+            let scorelist = [1, 1, 1, 1, 10, 10, 10, 10];
+
+            // shuffle the algirithm
+
+            var items = [0, 1, 2, 3, 4, 5, 6, 7];
+
+
+            for (var i = 500; i > 0; i--) {
+
+                let j = Math.floor(Math.random() * 8);
+                let k = Math.floor(Math.random() * 8);
+                //swap values
+
+                let temp = items[k];
+
+                items[k] = items[j];
+
+                items[j] = temp;
+
+            }
+
+            console.log(items);
+
+            let imgNum = 0;
+
+            let score1 = 0;
+
+            let score2 = 0;
+
+            let score3 = 0;
+
+            let score4 = 0;
+
+            let score5 = 0;
+
+            let score6 = 0;
+
+            let score7 = 0;
+
+            let score8 = 0;
+
+            var total1 = 0;
+
+            var drawN = 0;
+
+
+            document.getElementById("drawCard").addEventListener('click', changeImage);
+
+            function changeImage() {
+
+                imgNum = (imgNum + 1) % card.length;
+
+                imgs = items[imgNum];
+
+                console.log(imgs);
+
+                console.log(card[imgs]);
+
+                if (drawN == 0) {
+
+                    document.getElementById("cardimage").src = card[imgs];
+
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score1 = scorelist[imgs];
+
+                    imgs = items[score1];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++;
+
+                } else if (drawN == 1) {
+
+                    document.getElementById("cardimage2").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score2 = scorelist[imgs];
+
+                    imgs = items[score2];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 2) {
+
+                    document.getElementById("cardimage3").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score3 = scorelist[imgs];
+
+                    imgs = items[score3];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 3) {
+
+                    document.getElementById("cardimage4").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score4 = scorelist[imgs];
+
+                    imgs = items[score4];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 4) {
+
+                    document.getElementById("cardimage5").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score5 = scorelist[imgs];
+
+                    imgs = items[score5];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 5) {
+
+                    document.getElementById("cardimage6").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score6 = scorelist[imgs];
+
+                    imgs = items[score6];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 6) {
+
+                    document.getElementById("cardimage7").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score7 = scorelist[imgs];
+
+                    imgs = items[score7];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                } else if (drawN == 7) {
+
+                    document.getElementById("cardimage8").src = card[imgs];
+
+                    document.getElementById('score').innerHTML = "<i>" + scorelist[imgs] + "</i>";
+
+                    score1 = scorelist[imgs];
+
+                    imgs = items[score8];
+
+                    console.log(imgs);
+
+                    console.log(card[imgs]);
+
+                    drawN++
+
+                }
+
+                total1 = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8;
+
+                document.getElementById('total').innerHTML = "<i>" + total1 + "</i>";
+
+                if (total1 == 21) {
+
+                    setTimeout(() => {
+
+                        alert("You Scored 21!!!");
+
+                    }, 700);
+
+                } else if (total1 > 21) {
+
+                    setTimeout(() => {
+
+                        alert("You Busted!!!");
+
+                    }, 200);
+
+                }
+
+
+            }
+
+
+            document.getElementById("restart").addEventListener('click', rest_art);
+
+            function rest_art() {
+
+                for (var i = 500; i > 0; i--) {
+
+                    let j = Math.floor(Math.random() * 8);
+                    let k = Math.floor(Math.random() * 8);
+                    //swap values
+
+                    let temp = items[k];
+
+                    items[k] = items[j];
+
+                    items[j] = temp;
+
+                }
+
+                imgNum = 0;
+                score1 = 0;
+                score2 = 0;
+                score3 = 0;
+                score4 = 0;
+                score5 = 0;
+                score6 = 0;
+                score7 = 0;
+                score8 = 0;
+                total1 = 0;
+                drawN = 0;
+
+                document.getElementById("cardimage").src = "img2/backCard.png";
+                document.getElementById("cardimage2").src = "img2/backCard.png";
+                document.getElementById("cardimage3").src = "img2/backCard.png";
+                document.getElementById("cardimage4").src = "img2/backCard.png";
+                document.getElementById("cardimage5").src = "img2/backCard.png";
+                document.getElementById("cardimage6").src = "img2/backCard.png";
+                document.getElementById("cardimage7").src = "img2/backCard.png";
+                document.getElementById("cardimage8").src = "img2/backCard.png";
+
+                document.getElementById('score').innerHTML = "<i>" + 0 + "</i>";
+                total1 = score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8;
+                document.getElementById('total').innerHTML = "<i>" + total1 + "</i>";
+            }
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>
